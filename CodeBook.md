@@ -48,7 +48,7 @@ The activity list was converted to activity names, by matching the ids in the na
 The names given to the columns of the data sets were:
 * Measurements - names of the variables, after removing the '-'
 * Activities - the column was named 'Activity'
-* Subjects - the colimn was named 'Subject'
+* Subjects - the column was named 'Subject'
 
 ### 4. Merging to a single data set
 The 3 data sets were merged using cbind() in the order Subject, Activity, Measurements.
