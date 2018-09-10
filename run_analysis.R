@@ -67,8 +67,8 @@ tActivitySet <- rbind(tTestActivity, tTrainActivity)
 
 
 ## 2. Select only the measurements (columns) of mean and standard deviation, both to the data set and to the variable names
-tDataSetMeanStd <- tDataSet[, grep("mean()|std", tVariableNames$V2)]
-tVariableNamesMeanStd <- tVariableNames[grep("mean()|std", tVariableNames$V2), ]
+tDataSetMeanStd <- tDataSet[, grep("mean\\(\\)|std\\(\\)", tVariableNames$V2)]
+tVariableNamesMeanStd <- tVariableNames[grep("mean\\(\\)|std\\(\\)", tVariableNames$V2), ]
 
 
 ## 4. Remove the '-' in the variable names to hopefully make them a little more human readable
@@ -93,7 +93,7 @@ meltedResults <- melt(tResults, id.vars=c("Subject", "Activity"))
 tMeans <- dcast(meltedResults, Subject + Activity ~ variable, mean)
 
 ## clarify variable names
-names(tMeans)[3:81] <- paste0 ("Average of: ", names(tMeans)[3:81])
+names(tMeans)[3:68] <- paste0 ("Average of: ", names(tMeans)[3:68])
 
 ## Finally, write both data sets to the working directory
 write.table(tResults, "measurements.txt", sep = ",")
