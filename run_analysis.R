@@ -95,6 +95,8 @@ tMeans <- dcast(meltedResults, Subject + Activity ~ variable, mean)
 ## clarify variable names
 names(tMeans)[3:68] <- paste0 ("Average of: ", names(tMeans)[3:68])
 
-## Finally, write the tidy data set 
+## Finally, write the tidy data set
+message("Writing output...")
 write.table(tMeans, "means.txt", row.name = FALSE)
+message ("Done")
 
