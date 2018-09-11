@@ -95,7 +95,6 @@ tMeans <- dcast(meltedResults, Subject + Activity ~ variable, mean)
 ## clarify variable names
 names(tMeans)[3:68] <- paste0 ("Average of: ", names(tMeans)[3:68])
 
-## Finally, write both data sets to the working directory
-write.table(tResults, "measurements.txt", sep = ",")
-write.table(tMeans, "means.txt", sep = ",")
+## Finally, write the tidy data set 
+write.table(tMeans, "means.txt", row.name = FALSE)
 
