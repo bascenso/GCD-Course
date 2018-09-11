@@ -66,7 +66,7 @@ This results in 3 data sets - measurements, subjects and observations - each wit
 
 ### 2. Selecting only the appropriate variables
 To select the measurements on mean and standard deviation, the list of variables was filtered by those that have 'mean()' or 'std()' in the name, using:
-grep("mean\\(\\)|std\\(\\)", variableNames)
+grep("mean\\(\\)|std\\(\\)", variableNames). The measures of meanFreq() were intentionally left out as this was the author's interpretation of the intended behavior.
 
 The data set with the measurements was cut with only the columns that correspond to measures of mean or std.
 
